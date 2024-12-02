@@ -99,10 +99,10 @@
             <h1>Roblox Script Hub</h1>
         </div>
         <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#script">Script</a>
-            <a href="login.html">Admin</a>
+            <a href="index.html">Home</a>
+            <a href="credit.html">Developers</a>
+            <a href="#script">Scripts</a>
+            <a href="login.html">Key</a>
         </div>
     </nav>
 
@@ -117,20 +117,20 @@
             <div class="script-card">
                 <h2>Script Blox Fruits:</h2>
                 <img src="blxofruits.png" alt="Script 1 UI">
-                <textarea readonly>
-                  loadstring(game:HttpGet("https://binbinvogamingvnclone.github.io/BloxFruits/Loader",true))()
+                <textarea id= "script1" readonly>
+loadstring(game:HttpGet("https://binbinvogamingvnclone.github.io/BloxFruits/Loader",true))()
                 </textarea>
                 <button onclick="copyScript('script1')">Copy Script</button>
             </div>
 
             <!-- Script Card 2 -->
             <div class="script-card">
-                <h2>Script Fisch</h2>
+                <h2>Script Fisch:</h2>
                 <img src="fisch.png" alt="Script 2 UI">
-                <textarea readonly>
-                 loadstring(game:HttpGet("https://BinbinvoGamingVNClone.github.io/Fisch/V2/Loader",true))() 
+                <textarea id= "script2" readonly>
+loadstring(game:HttpGet("https://BinbinvoGamingVNClone.github.io/Fisch/V2/Loader",true))() 
                 </textarea>
-                <button onclick="copyScript('script2')">Copy Script</button>
+                 <button onclick="copyScript('script2')">Copy Script</button>
             </div>
 
             <!-- Add more script cards as needed -->
@@ -138,17 +138,23 @@
     </div>
 
     <script>
-        function copyScript(id) {
-            // Find the relevant textarea in the card
-            const textarea = document.querySelector(`#${id} textarea`);
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // For mobile devices
-            navigator.clipboard.writeText(textarea.value).then(() => {
-                alert("Script copied to clipboard!");
-            }).catch(err => {
-                console.error("Failed to copy:", err);
-            });
-        }
+function copyScript(textareaId) {
+    // Select the textarea using its ID
+    const textarea = document.getElementById(textareaId);
+    
+    // Select the text inside the textarea
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+    
+    // Copy the selected text to the clipboard
+    navigator.clipboard.writeText(textarea.value).then(() => {
+        alert("Script copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy:", err);
+    });
+}
     </script>
 </body>
 </html>
+                 
+                
